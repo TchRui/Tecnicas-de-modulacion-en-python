@@ -20,16 +20,17 @@ class main():
             print("---- MENU ----")
             print("1. Unipolar")
             print("2. NRZ-L")
-            print("3. RZ")
-            print("4. Manchester")
-            print("5. Manchester Diferencial")
-            print("6. AMI")
-            print("7. B8ZS")
-            print("8. HDB3")
-            print("9. PSK4")
-            print("10. QAM8")
-            print("11. Analogo")
-            print("12. Salir")
+            print("3. NRZ-I")
+            print("4. RZ")
+            print("5. Manchester")
+            print("6. Manchester Diferencial")
+            print("7. AMI")
+            print("8. B8ZS")
+            print("9. HDB3")
+            print("10. PSK4")
+            print("11. QAM8")
+            print("12. Analogo")
+            print("13. Salir")
             print("--------------")
             opcion = int(input("Ingrese una opcion: "))
 
@@ -43,42 +44,46 @@ class main():
 
             elif opcion == 3:
                 cadena = self.ingreso_datos()
-                rz(cadena)
-
+                nrzi(cadena)
+                
             elif opcion == 4:
                 cadena = self.ingreso_datos()
-                manchester(cadena)
+                rz(cadena)
 
             elif opcion == 5:
                 cadena = self.ingreso_datos()
-                manchesterdif(cadena)
+                manchester(cadena)
 
             elif opcion == 6:
                 cadena = self.ingreso_datos()
-                ami(cadena)
+                manchesterdif(cadena)
 
             elif opcion == 7:
                 cadena = self.ingreso_datos()
-                b8zs(cadena)
+                ami(cadena)
 
             elif opcion == 8:
                 cadena = self.ingreso_datos()
-                hdb3(cadena)
+                b8zs(cadena)
 
             elif opcion == 9:
                 cadena = self.ingreso_datos()
-                fpsk(cadena)
+                hdb3(cadena)
 
             elif opcion == 10:
                 cadena = self.ingreso_datos()
+                fpsk(cadena)
+
+            elif opcion == 11:
+                cadena = self.ingreso_datos()
                 epsk(cadena)
             
-            elif opcion == 11:
+            elif opcion == 12:
                 cadena = str(input("Ingrese la cadena de numeros separados por comas: "))
                 analogo_objeto = analogo()
-                analogo_objeto.decodificador(cadena)
+                analogo_objeto.main(cadena)
 
-            elif opcion == 12:
+            elif opcion == 13:
                 print("Hasta luego")
                 flag = False
                 exit()

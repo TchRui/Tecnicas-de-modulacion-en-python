@@ -36,6 +36,7 @@ class unipolo:
             vic.right(90)
             vic.forward(15)
         band = False
+        
         for i in range(0, len(cadena)):
             if cadena[i] == "1" and band == False:
                 inicio1()

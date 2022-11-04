@@ -39,7 +39,8 @@ class fpsk:
                     pi2 = pi+2*np.pi
                 x = np.linspace(pi, pi2, 100)
                 plt.plot(x, r(x), color="red")
-            elif cadena[i] == '1' and cadena[i+1] == '0':
+
+            elif cadena[i] == '1' and cadena[i+1] == '1':
                 if pi < pi3 and pi2 < pi4:
                     pi = pi4
                     pi2 = pi+2*np.pi
@@ -48,15 +49,7 @@ class fpsk:
                     pi2 = pi+2*np.pi
                 x = np.linspace(pi, pi2, 100)
                 plt.plot(x, s(x), color="pink")
-            elif cadena[i] == '1' and cadena[i+1] == '1':
-                if pi3 < pi and pi4 < pi2:
-                    pi3 = pi2
-                    pi4 = pi3+2*np.pi
-                else:
-                    pi3 = pi3+2*np.pi
-                    pi4 = pi3+2*np.pi
-                x1 = np.linspace(pi3, pi4, 100)
-                plt.plot(x1, t(x1), color="green")
+
             elif cadena[i] == '0' and cadena[i+1] == '0':
                 if pi3 < pi and pi4 < pi2:
                     pi3 = pi2
@@ -65,11 +58,22 @@ class fpsk:
                     pi3 = pi3+2*np.pi
                     pi4 = pi3+2*np.pi
                 x1 = np.linspace(pi3, pi4, 100)
-                plt.plot(x1, u(x1), color="blue")
-            # print(i)
+                plt.plot(x1, t(x1), color="green")
 
+            elif cadena[i] == '1' and cadena[i+1] == '0':
+                if pi3 < pi and pi4 < pi2:
+                    pi3 = pi2
+                    pi4 = pi3+2*np.pi
+                else:
+                    pi3 = pi3+2*np.pi
+                    pi4 = pi3+2*np.pi
+                x1 = np.linspace(pi3, pi4, 100)
+                plt.plot(x1, u(x1), color="blue")
+            
+        plt.title("Modulación 4 PSK")
         plt.grid()
         plt.show()
+
 
 if __name__ == "__main__":
     numeros = ""

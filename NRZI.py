@@ -43,18 +43,13 @@ class nrzi:
         uno = ""
         cer = refer
         for i in range(0, len(cadena)):
-            if cadena[i] == "1" and i == 0:
+            if i == 0:  # cadena[i]=="1" and
                 vic.left(90)
                 vic.forward(15)
                 vic.right(90)
                 vic.forward(15)
                 band = True
-            elif cadena[i] == "0" and i == 0:
-                vic.right(90)
-                vic.forward(15)
-                vic.left(90)
-                vic.forward(15)
-                band = False
+
             elif i > 0:
                 if cadena[i] == "1" and band == False:
                     inicio1()
@@ -78,6 +73,7 @@ class nrzi:
                         fin1()
 
         turtle.mainloop()
+
 
 if __name__ == "__main__":
 

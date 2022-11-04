@@ -53,34 +53,29 @@ class nrzl:
         uno = ""
         cer = refer
         for i in range(0, len(cadena)):
-            if cadena[i] == "1" and i == 0:
+            if i == 0:  # cadena[i]=="1" and
                 vic.left(90)
                 vic.forward(15)
                 vic.right(90)
                 vic.forward(15)
-            elif cadena[i] == "0" and i == 0:
-                vic.right(90)
-                vic.forward(15)
-                vic.left(90)
-                vic.forward(15)
+                
             elif i > 0:
-                if cadena[i] == "1" and cadena[i-1] != "1":
+                if cadena[i] == "0" and cadena[i-1] != "0":
                     inicio1()
                     if i == len(cadena)-1:
                         fin1()
-                elif cadena[i] == "0" and cadena[i-1] != "0":
+                elif cadena[i] == "1" and cadena[i-1] != "1":
                     cero()
                     if i == len(cadena)-1:
                         fin0()
                 else:
                     continua()
-                    if i == len(cadena)-1 and cadena[i] == "1":
+                    if i == len(cadena)-1 and cadena[i] == "0":
                         fin1()
-                    elif i == len(cadena)-1 and cadena[i] == "0":
+                    elif i == len(cadena)-1 and cadena[i] == "1":
                         fin0()
 
         turtle.mainloop()
-
 
 if __name__ == "__main__":
     numeros = ""
